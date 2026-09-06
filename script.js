@@ -10,8 +10,8 @@ const translations = {
     colSlNo: "Sl. No.",
     colDesc: "Item Description / Particulars",
     sigReceiverSub: "Received By (Signature & Date)",
-    sigAuthSub: "Authorized Signatory",
-    defaultTitle: "District IT Officer, Alappuzha"
+    sigAuthSub: "Officer",
+    defaultTitle: "District Revenue IT Cell Co-ordinator, Alappuzha"
   },
   ml: {
     headerTitle: "ജില്ലാ റവന്യൂ ഐ.ടി സെൽ ആലപ്പുഴ",
@@ -23,7 +23,7 @@ const translations = {
     colSlNo: "ക്രമ നമ്പർ",
     colDesc: "ഇനങ്ങളുടെ വിവരണം",
     sigReceiverSub: "സ്വീകരിച്ചയാൾ (ഒപ്പും തീയതിയും)",
-    sigAuthSub: "അംഗീകൃത ഉദ്യോഗസ്ഥൻ",
+    sigAuthSub: "ഉദ്യോഗസ്ഥൻ",
     defaultTitle: "ജില്ലാ റവന്യൂ ഐ.ടി കോർഡിനേറ്റർ, ആലപ്പുഴ"
   }
 };
