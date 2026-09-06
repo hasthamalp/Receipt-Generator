@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>District IT Cell - Receipt Acknowledgment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Input Form Controls -->
+  <div class="input-controls">
+    <h2>Receipt Acknowledgment Form / കൈപ്പറ്റ് രസീത് </h2>
+
+    <div class="input-group">
+      <label for="langSelect">Document Language / ഭാഷ:</label>
+      <select id="langSelect">
+        <option value="en">English</option>
+        <option value="ml">മലയാളം (Malayalam)</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="receiptDate">Date Received / സ്വീകരിച്ച തീയതി:</label>
+      <input type="date" id="receiptDate">
+    </div>
+
+    <div class="input-group">
+      <label for="itemsInput">Items (Enter one per line for multiple items):</label>
+      <textarea id="itemsInput" rows="4" placeholder="e.g.,&#10;Dell Latitude Laptop (S/N: 12345)&#10;UPS 1KVA (S/N: 67890)"></textarea>
+    </div>
+
+    <div class="input-group">
+      <label for="receiverName">Received By (Name & Designation):</label>
+      <input type="text" id="receiverName" placeholder="e.g., John Doe, Assistant IT Officer">
+    </div>
+
+    <div class="input-group">
+      <label for="signatoryTitle">Authorized Signatory/ അതോറിറ്റി ടൈറ്റിൽ:</label>
+      <input type="text" id="signatoryTitle" value="District IT Officer, Alappuzha">
+    </div>
+
+    <button onclick="window.print()">Print Acknowledgment / പ്രിന്റ് ചെയ്യുക</button>
+  </div>
+
+  <!-- Printable Landscape Document -->
+  <div id="certificate" class="landscape-cert">
+    
+    <!-- Top Header & Logos -->
+    <div class="cert-header">
+      <img src="unnamed.jpg" alt="District IT Cell Logo" class="cert-logo">
+      <div class="header-text">
+        <h1 id="headerTitle">DISTRICT IT CELL ALAPPUZHA</h1>
+        <p id="headerSub" class="sub-title">System / Item Receipt Acknowledgment</p>
+      </div>
+      <img src="unnamed.webp" alt="e-Revenue Logo" class="cert-logo">
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Main Acknowledgment Statement -->
+    <div class="cert-body">
+      <p id="certText"></p>
+
+      <!-- Dynamic Item Display Area -->
+      <div id="itemDisplayContainer" class="item-display-container"></div>
+    </div>
+
+    <!-- Dual Signature Footer -->
+    <div class="cert-footer">
+      <div class="signature-block">
+        <div class="sig-space"></div>
+        <div class="sig-line"></div>
+        <p class="sig-title"><span id="displayReceiverName">[ Receiver Name ]</span></p>
+        <p id="sigSubReceiver" class="sig-sub">Received By (Signature & Date)</p>
+      </div>
+
+      <div class="signature-block">
+        <div class="sig-space"></div>
+        <div class="sig-line"></div>
+        <p id="displayTitle" class="sig-title">District IT Officer, Alappuzha</p>
+        <p id="sigSubAuth" class="sig-sub">Authorized Signatory</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
