@@ -1,0 +1,219 @@
+@page {
+  size: Letter;
+  margin: 0;
+}
+
+:root {
+  --page-width: 612pt;
+  --page-height: 792pt;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #eef1f5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  min-height: 58px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid #d7dce3;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.toolbar strong {
+  display: block;
+  font-size: 15px;
+}
+
+.muted {
+  display: block;
+  margin-top: 2px;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 9px 14px;
+  font: 600 13px Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  background: #111827;
+  color: white;
+}
+
+button.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.workspace {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.page {
+  position: relative;
+  width: var(--page-width);
+  height: var(--page-height);
+  flex: 0 0 auto;
+  background: white;
+  box-shadow: 0 8px 30px rgba(0,0,0,.16);
+  overflow: hidden;
+}
+
+.template {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+.field {
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  padding: 1pt 3pt;
+  height: 18pt;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  font-weight: 400;
+  line-height: 16pt;
+  border-radius: 0;
+}
+
+.field:focus {
+  background: rgba(255,255,210,.9);
+  box-shadow: inset 0 0 0 1px rgba(0,80,160,.35);
+}
+
+.field::placeholder {
+  color: transparent;
+}
+
+/*
+  Coordinates are in PDF points, matching the supplied 612 x 792 pt
+  Letter-size page. The editable fields sit inside the existing table cells.
+*/
+.applicant {
+  left: 265pt;
+  top: 410pt;
+  width: 308pt;
+}
+
+.position {
+  left: 265pt;
+  top: 464pt;
+  width: 308pt;
+}
+
+.org-id {
+  left: 265pt;
+  top: 512pt;
+  width: 308pt;
+}
+
+.mobile {
+  left: 265pt;
+  top: 562pt;
+  width: 308pt;
+}
+
+.email {
+  left: 265pt;
+  top: 585pt;
+  width: 308pt;
+}
+
+.date {
+  left: 126pt;
+  top: 738pt;
+  width: 66pt;
+  height: 16pt;
+  padding: 0;
+  font-size: 9pt;
+  line-height: 15pt;
+}
+
+.signature-safe-zone {
+  position: absolute;
+  left: 94pt;
+  top: 610pt;
+  width: 483pt;
+  height: 45pt;
+  pointer-events: none;
+}
+
+@media (max-width: 850px) {
+  .workspace {
+    padding: 12px;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .toolbar {
+    position: static;
+  }
+}
+
+@media print {
+  html, body {
+    width: 8.5in;
+    height: 11in;
+    background: white;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .workspace {
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+
+  .page {
+    width: 612pt;
+    height: 792pt;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .field {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Capricorn authorization letter form for Office of the District Collectorate Alappuzha">
+  <title>Authorization Letter – Alappuzha</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="toolbar no-print">
+    <div>
+      <strong>Authorization Letter</strong>
+      <span class="muted">Office of the District Collectorate Alappuzha</span>
+    </div>
+    <div class="actions">
+      <button type="button" id="clearBtn" class="secondary">Clear</button>
+      <button type="button" id="printBtn">Print / Save PDF</button>
+    </div>
+  </div>
+
+  <main class="workspace">
+    <form id="letterForm" class="page" autocomplete="off">
+      <img class="template" src="assets/template.png" alt="Authorization letter template">
+
+      <!-- Only the requested user-editable fields are overlaid.
+           Hard-coded values remain part of the supplied template. -->
+      <input id="applicantName" name="applicantName" class="field applicant" type="text"
+             aria-label="Applicant Name" placeholder="">
+
+      <input id="position" name="position" class="field position" type="text"
+             aria-label="Position/Designation" placeholder="">
+
+      <input id="orgId" name="orgId" class="field org-id" type="text"
+             aria-label="Organization ID Card No" placeholder="">
+
+      <input id="mobile" name="mobile" class="field mobile" type="tel"
+             inputmode="numeric" aria-label="Mobile No" placeholder="">
+
+      <input id="email" name="email" class="field email" type="email"
+             aria-label="Email ID" placeholder="">
+
+      <input id="date" name="date" class="field date" type="date"
+             aria-label="Date">
+
+      <div class="signature-safe-zone" aria-hidden="true"></div>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
